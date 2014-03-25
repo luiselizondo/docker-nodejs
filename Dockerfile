@@ -12,4 +12,7 @@ EXPOSE 3000
 
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
+
+WORKDIR /var/www
+
 CMD ["/start.sh"]
