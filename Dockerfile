@@ -1,8 +1,10 @@
 FROM ubuntu:12.04
 MAINTAINER Luis Elizondo "lelizondo@gmail.com"
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update
-RUN apt-get install -y python-software-properties curl git
+RUN apt-get install -y python python-software-properties curl git
 RUN add-apt-repository -y ppa:chris-lea/node.js
 RUN apt-get -qq update
 RUN apt-get install -y nodejs
