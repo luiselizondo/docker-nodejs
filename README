@@ -1,6 +1,0 @@
-
-docker run -itd -p 8000 --name nodejs -v /home/luis/Code/application:/var/www luis/nodejs
-
-docker run -itd -p 8000 --name nodejs -v /home/luis/Code/application:/var/www --link mongodb:mongodb --link redis:redis luis/nodejs node /var/www/start.js
-
-docker run -itd -p 8000 --name nodejs -v /home/luis/Code/application:/var/www --link mongodb:mongodb --link redis:redis luis/nodejs env
