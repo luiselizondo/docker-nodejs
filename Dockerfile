@@ -20,6 +20,8 @@ RUN apt-get autoremove -y
 ADD ./config/nginx.conf /etc/nginx/nginx.conf
 ADD ./config/supervisord.conf /etc/supervisor/conf.d/supervisord-web.conf
 
+RUN ln -s /usr/bin/nodejs /usr/local/bin/node
+
 EXPOSE 80
 
 WORKDIR /var/www
