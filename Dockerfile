@@ -7,6 +7,7 @@ RUN apt-get update
 RUN apt-get -qq update
 RUN apt-get install -y nodejs npm imagemagick
 RUN npm install -g expressjsmvc express bower
+RUN npm install -g nodemon
 
 RUN apt-get update --fix-missing
 
