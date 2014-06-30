@@ -18,7 +18,7 @@ RUN mkdir -p /var/log/supervisor
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN apt-get autoremove -y
 
-ADD ./config/supervisord.conf /etc/supervisor/conf.d/supervisord-web.conf
+ADD ./config/supervisord.conf /etc/supervisor/conf.d/supervisord-nodejs.conf
 
 RUN ln -s /usr/bin/nodejs /usr/local/bin/node
 
@@ -26,6 +26,6 @@ EXPOSE 3000
 
 WORKDIR /var/www
 
-VOLUME ["/etc/nginx/sites-enabled", "/var/files"]
+VOLUME ["/var/files", "/var/www"]
 
 CMD ["/usr/bin/supervisord", "-n"]
