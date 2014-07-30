@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 RUN apt-get -qq update
-RUN apt-get install -y nodejs npm imagemagick
+RUN apt-get install -y nodejs npm imagemagick git
 RUN npm install -g expressjsmvc express bower
 RUN npm install -g nodemon
 
