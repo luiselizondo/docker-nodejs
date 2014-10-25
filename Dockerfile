@@ -4,10 +4,11 @@ MAINTAINER Luis Elizondo "lelizondo@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-RUN apt-get -qq update
+RUN apt-get update --fix-missing
+
 RUN apt-get install -y nodejs npm imagemagick git
-RUN npm install -g expressjsmvc express bower
-RUN npm install -g nodemon
+RUN npm install -g expressjsmvc express bower 
+RUN npm install -g mocha sinon should assert grunt
 
 RUN apt-get update --fix-missing
 
