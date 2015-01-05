@@ -5,11 +5,14 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 RUN apt-get update --fix-missing
+RUN apt-get update --fix-missing
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 
-RUN apt-get install -y nodejs npm imagemagick git
+RUN apt-get install -y nodejs imagemagick git
 RUN npm install -g expressjsmvc express bower 
 RUN npm install -g mocha sinon should assert grunt
-
+RUN npm install --global gulp
 RUN apt-get update --fix-missing
 
 RUN apt-get install -y supervisor
