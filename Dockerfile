@@ -9,8 +9,8 @@ RUN apt-get update --fix-missing
 RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 
-RUN apt-get install -y nodejs imagemagick git
-RUN npm install -g expressjsmvc express bower 
+RUN apt-get install -y nodejs imagemagick git openssl make node-gyp
+RUN npm install -g express bower 
 RUN npm install -g mocha sinon should assert grunt
 RUN npm install --global gulp
 RUN apt-get update --fix-missing
