@@ -10,6 +10,7 @@ RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 
 RUN apt-get install -y nodejs imagemagick git openssl make node-gyp
+RUN npm install -g npm@latest
 RUN npm install -g express bower 
 RUN npm install -g mocha sinon should assert grunt
 RUN npm install --global gulp
@@ -29,7 +30,5 @@ RUN ln -s /usr/bin/nodejs /usr/local/bin/node
 EXPOSE 3000
 
 WORKDIR /var/www
-
-VOLUME ["/var/files", "/var/www"]
 
 CMD ["/usr/bin/supervisord", "-n"]
