@@ -9,14 +9,11 @@ RUN apt-get update --fix-missing
 RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 
-RUN apt-get install -y nodejs imagemagick git openssl make node-gyp
+RUN apt-get install -y supervisor nodejs imagemagick git openssl make node-gyp
 RUN npm install -g npm@latest
-RUN npm install -g express bower 
-RUN npm install -g mocha sinon should assert grunt
-RUN npm install --global gulp
+RUN npm install -g express bower mocha sinon should assert grunt gulp 
 RUN apt-get update --fix-missing
 
-RUN apt-get install -y supervisor
 RUN mkdir -p /var/log/supervisor
 
 # Cleanup
@@ -31,4 +28,3 @@ EXPOSE 3000
 
 WORKDIR /var/www
 
-CMD ["/usr/bin/supervisord", "-n"]
