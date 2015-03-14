@@ -27,3 +27,4 @@ EXPOSE 3000
 
 WORKDIR /var/www
 
+CMD ["/usr/bin/supervisord", "-n"]
