@@ -9,9 +9,10 @@ RUN apt-get update --fix-missing
 RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 
-RUN apt-get install -y supervisor nodejs imagemagick git openssl make node-gyp
+RUN apt-get install -y supervisor python nodejs imagemagick git openssl make build-essential gcc ca-certificates
 RUN npm install -g npm@latest
-RUN npm install -g express-generator bower mocha sinon should assert grunt-cli gulp 
+RUN npm install -g express-generator bower mocha sinon should assert grunt-cli gulp node-gyp
+RUN npm update
 RUN apt-get update --fix-missing
 RUN mkdir -p /var/log/supervisor
 
